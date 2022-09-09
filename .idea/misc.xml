@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/drawable/bg_entrar.xml" value="0.1225" />
+        <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/drawable/edit_text_cadastro.xml" value="0.1225" />
         <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/drawable/edit_text_login.xml" value="0.18" />
-        <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/layout/activity_form_cadastro.xml" value="0.1484375" />
+        <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/layout/activity_form_cadastro.xml" value="0.2" />
         <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/layout/activity_form_login.xml" value="0.22" />
         <entry key="..\:/Users/ryanl/AndroidStudioProjects/FilmesOnline/app/src/main/res/layout/activity_main.xml" value="0.2" />
       </map>
