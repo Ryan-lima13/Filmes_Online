@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.rlds.filmesonline.databinding.ActivityFormLoginBinding
 
 class FormLogin : AppCompatActivity() {
@@ -47,7 +49,25 @@ class FormLogin : AppCompatActivity() {
                 abrirTelaFilme()
             }
         }.addOnFailureListener {
-            mensagem.setText("Erro ao fazer Login!")
+            var erro = it
+            when{
+                erro is FirebaseAuthInvalidCredentialsException->mensagem.setText("Email ou senha estão incorretos!")
+                erro is FirebaseNetworkException-> mensagem.setText("Sem conexão com a Internet")
+                else -> mensagem.setText("Erro ao fazer login!")
+            }
+
+        }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        verificarusuarioLogado()
+    }
+    private fun verificarusuarioLogado(){
+        val usuarioLogado = FirebaseAuth.getInstance().currentUser
+        if (usuarioLogado != null){
+            abrirTelaFilme()
         }
 
     }
