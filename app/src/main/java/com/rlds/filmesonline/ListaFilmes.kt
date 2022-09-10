@@ -1,10 +1,14 @@
 package com.rlds.filmesonline
 
+import Adapter.FilmesAdapter
+import Model.addFilmes
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.GridLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.rlds.filmesonline.databinding.ActivityListaFilmesBinding
 
@@ -14,6 +18,11 @@ class ListaFilmes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityListaFilmesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar!!.hide()
+
+        val recycler_filmes = binding.recyclerViewFilmes
+        recycler_filmes.adapter  = FilmesAdapter(addFilmes())
+        recycler_filmes.layoutManager = GridLayoutManager(applicationContext,3)
 
     }
 
